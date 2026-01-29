@@ -1,0 +1,270 @@
+# CÁC CÂU LỆNH MẪU ĐỂ DEMO HỆ THỐNG
+
+## 1. BASIC COMMANDS (Cơ bản)
+
+### View Topology
+```
+Cho tôi xem cấu trúc mạng
+Xem topology
+Có bao nhiêu switch trong mạng?
+Hiển thị thông tin mạng
+```
+
+### View Flows
+```
+Hiển thị tất cả flow rules
+Xem các flows trên switch 1
+Cho tôi xem flow table
+Danh sách các rules hiện tại
+```
+
+## 2. FLOW MANAGEMENT (Quản lý flows)
+
+### Add Flow Rules
+```
+Thêm rule forward traffic từ 10.0.0.1 đến 10.0.0.2 qua switch 1 port 2
+Tạo flow cho phép h1 ping h2
+Thêm flow từ host1 đến host2 với priority 100
+Forward traffic từ 192.168.1.1 đến 192.168.1.2 qua port 3
+```
+
+### Delete Flow Rules
+```
+Xóa tất cả flows trên switch 1
+Xóa flow từ 10.0.0.1
+Xóa rule có source IP là 10.0.0.5
+Clear all flow rules on switch 2
+```
+
+## 3. TRAFFIC CONTROL (Kiểm soát traffic)
+
+### Block Traffic
+```
+Chặn tất cả traffic từ 10.0.0.5
+Block kết nối từ host h3
+Chặn traffic từ 192.168.1.100 đến 192.168.1.200
+Ngăn chặn h5 gửi packets
+```
+
+### Allow Traffic
+```
+Cho phép h1 kết nối với h2
+Allow traffic from 10.0.0.1 to 10.0.0.2
+Mở kết nối giữa host1 và host2
+Enable communication between h3 and h4
+```
+
+## 4. QoS (Quality of Service)
+
+### Set Bandwidth
+```
+Đặt băng thông 5Mbps từ 10.0.0.1 đến 10.0.0.2
+Giới hạn bandwidth 10Mbps cho h1
+Set 20Mbps bandwidth limit for traffic from h3 to h4
+Limit speed to 1Mbps from 10.0.0.5
+```
+
+## 5. ADVANCED QUERIES (Truy vấn nâng cao)
+
+### Complex Commands
+```
+Thêm flow với priority cao để forward ICMP từ h1 đến h2
+Tạo rule để chặn TCP traffic từ 10.0.0.5 port 80
+Show all flows on switch 1 with priority greater than 50
+Xem các flows có match với IP 10.0.0.1
+```
+
+### Multi-step Operations
+```
+Đầu tiên xem topology, sau đó thêm flow từ h1 đến h2
+Xóa tất cả flows cũ rồi thêm flow mới từ 10.0.0.1 đến 10.0.0.2
+```
+
+## 6. CONVERSATIONAL QUERIES (Hội thoại)
+
+### Questions
+```
+Làm sao để h1 có thể ping h2?
+Tại sao h3 không kết nối được với h4?
+Mạng hiện tại có bao nhiêu switches?
+Switch 1 có những flows nào?
+```
+
+### Follow-up
+```
+User: Cho tôi xem topology
+Bot: [shows topology]
+User: Thêm flow trên switch 1
+Bot: [asks for details]
+User: Từ h1 đến h2
+```
+
+## 7. ERROR HANDLING (Xử lý lỗi)
+
+### Incomplete Commands
+```
+Thêm flow
+→ Bot hỏi: từ đâu đến đâu?
+
+Xóa flow
+→ Bot hỏi: trên switch nào?
+```
+
+### Ambiguous Commands
+```
+Chặn h1
+→ Bot hỏi: chặn toàn bộ hay chỉ đến một host cụ thể?
+```
+
+## 8. MIXED LANGUAGE (Tiếng Việt + Anh)
+
+```
+Show me topology của mạng
+Add flow từ 10.0.0.1 to 10.0.0.2
+Xóa tất cả flows on switch 1
+Block traffic from h3 đến h4
+```
+
+## 9. DEMO SCRIPT (Kịch bản demo)
+
+### Script 1: Basic Demo (5 phút)
+
+1. **Giới thiệu:**
+   "Chào mọi người, hôm nay em sẽ demo hệ thống quản lý SDN bằng natural language"
+
+2. **Khởi động:**
+   - Show các terminals đang chạy (Ollama, Ryu, Mininet, Chatbot)
+
+3. **Demo Flow:**
+   ```
+   User: Xin chào
+   Bot: [greeting]
+   
+   User: Cho tôi xem cấu trúc mạng
+   Bot: [shows 2 switches, 4 hosts, 1 link]
+   
+   User: Thêm flow forward từ h1 đến h2
+   Bot: [confirms flow added]
+   
+   [Switch to Mininet terminal]
+   mininet> h1 ping h2
+   [Show successful ping]
+   
+   User: Chặn traffic từ h3
+   Bot: [confirms traffic blocked]
+   
+   [Switch to Mininet]
+   mininet> h3 ping h1
+   [Show failed ping]
+   
+   User: Hiển thị tất cả flow rules
+   Bot: [shows list of flows]
+   ```
+
+4. **Kết luận:**
+   "Như vậy chúng ta đã thấy hệ thống có thể hiểu tiếng Việt và thực hiện các thao tác SDN"
+
+### Script 2: Advanced Demo (10 phút)
+
+1. **Complex Topology:**
+   - Khởi động topology 3 (3 switches, 6 hosts)
+   
+2. **Advanced Operations:**
+   ```
+   User: Xem topology
+   [Show complex network]
+   
+   User: Thêm flow với priority 100 từ 10.0.0.1 đến 10.0.0.6
+   [Add priority flow]
+   
+   User: Đặt bandwidth 5Mbps cho traffic từ h1 đến h6
+   [Set QoS]
+   
+   User: Xem các flows có priority cao hơn 50
+   [Filter flows]
+   ```
+
+3. **Error Handling:**
+   ```
+   User: Thêm flow
+   Bot: [asks for source and destination]
+   
+   User: Từ h1
+   Bot: [asks for destination]
+   
+   User: Đến h2
+   Bot: [confirms and adds flow]
+   ```
+
+4. **Performance Test:**
+   - Gửi nhiều commands liên tiếp
+   - Show response time
+
+## 10. TESTING CHECKLIST
+
+### Trước khi demo:
+- [ ] Ollama đang chạy và model đã load
+- [ ] Ryu controller connected
+- [ ] Mininet topology đã start
+- [ ] Chatbot interface accessible
+- [ ] Test 2-3 commands để warm-up
+
+### Trong khi demo:
+- [ ] Nói chậm, rõ ràng
+- [ ] Show từng terminal khi relevant
+- [ ] Verify kết quả trong Mininet
+- [ ] Handle errors gracefully
+
+### Các command cần test trước:
+1. Show topology ✓
+2. Add flow ✓
+3. Delete flow ✓
+4. Block traffic ✓
+5. Show flows ✓
+
+## 11. TROUBLESHOOTING DURING DEMO
+
+### Nếu LLM không response:
+```bash
+# Restart Ollama
+pkill ollama
+ollama serve
+```
+
+### Nếu controller không kết nối:
+```bash
+# Check port
+netstat -tulpn | grep 8080
+
+# Restart controller
+pkill ryu-manager
+./controller/start_controller.sh
+```
+
+### Nếu Mininet bị stuck:
+```bash
+sudo mn -c
+sudo python3 mininet/topology.py
+```
+
+## 12. BACKUP COMMANDS (Nếu hệ thống lỗi)
+
+Có thể dùng curl để test trực tiếp:
+
+```bash
+# Get topology
+curl http://localhost:8080/sdn/topology
+
+# Add flow
+curl -X POST http://localhost:8080/sdn/flow/add \
+  -H "Content-Type: application/json" \
+  -d '{"switch_id": 1, "priority": 10, "src_ip": "10.0.0.1", "dst_ip": "10.0.0.2", "out_port": 2}'
+```
+
+---
+
+**GHI CHÚ:**
+- Mỗi command nên demo trên topology đơn giản trước
+- Prepare fallback nếu một command không work
+- Có sẵn screenshots để show nếu live demo fail
+- Time buffer: demo 5 phút = prepare 10 phút content
